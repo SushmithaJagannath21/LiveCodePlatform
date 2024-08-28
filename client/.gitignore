@@ -1,1 +1,30 @@
+# Ignore node_modules directory
 node_modules/
+
+# Ignore cache directories
+.cache/
+*.cache/
+
+# Ignore build and distribution directories
+build/
+dist/
+
+# Ignore log files
+*.log
+
+# Ignore large file types (add specific extensions as needed)
+*.pack
+*.zip
+*.tar
+*.gz
+
+# Ignore specific files
+client/node_modules/.cache/
+client/node_modules/default-development/
+
+# Ignore editor and OS-specific files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
