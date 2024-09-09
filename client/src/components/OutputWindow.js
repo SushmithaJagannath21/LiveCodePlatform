@@ -1,15 +1,16 @@
 import React from 'react';
-import { Form } from 'react-bootstrap';
 
 const OutputWindow = ({ output }) => {
     return (
-        <Form.Control
-            as="textarea"
-            rows={6}
-            readOnly
-            value={output}
-            placeholder="Output will be displayed here"
-        />
+        <div className="output-window">
+            <h3>Output</h3>
+            <textarea
+                readOnly
+                value={output}
+                rows={10}
+                style={{ width: '100%', fontFamily: 'monospace', padding: '10px' }}
+            />
+        </div>
     );
 };
 
