@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import io from 'socket.io-client';
 
-const socket = io('http://localhost:5000'); // Assuming the server is on localhost:5000
+const socket = io('http://localhost:5001'); // Assuming the server is on localhost:5000
 
 const ChatBox = () => {
     const [message, setMessage] = useState('');

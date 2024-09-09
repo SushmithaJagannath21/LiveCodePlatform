@@ -1,11 +1,26 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
+import axios from 'axios';
 
-const RunButton = ({ onRun }) => {
+const RunButton = ({ code, language, input, setOutput }) => {
+    const handleRunCode = () => {
+        axios
+            .post('http://localhost:5001/api/code-execution', {
+                code: code,
+                language: language,
+                input: input
+            })
+            .then((response) => {
+                setOutput(response.data.output);
+            })
+            .catch((error) => {
+                setOutput(error.response ? error.response.data.error : 'Error executing code');
+            });
+    };
+
     return (
-        <Button variant="primary" onClick={onRun}>
+        <button onClick={handleRunCode} className="btn btn-primary">
             Run Code
-        </Button>
+        </button>
     );
 };
 
